@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Ifelse {
   display: boolean = true;
-
+  displayDivs: boolean = true;
   hide() {
     this.display = false;
   }
@@ -17,5 +17,8 @@ export class Ifelse {
   }
   toggle() {
     this.display = !this.display;
+  }
+  toggleDivs(){
+    this.displayDivs = !this.displayDivs;
   }
 }
