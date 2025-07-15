@@ -1,1 +1,27 @@
+<h1>
+    Switch case in Angular 20
+</h1>
+
+<button (click)="handleColor('red')" > Red </button>
+<button (click)="handleColor('blue')" > Blue </button>
+<button (click)="handleColor('green')" > Green </button>
+<button (click)="handleColor('yellow')" > Yellow </button>
+
+<input type="text" placeholder="enter color" (input)="changeColor($event)">
+@switch (color) {
+    @case("red"){
+        <h2 style="color:red" >Red Color</h2>
+    }
+    @case("blue"){
+        <h2 style="color: blue" >blue Color</h2>
+    }
+    @case("green"){
+        <h2 style="color: green" >green Color</h2>
+    }
+    @case("yellow"){
+        <h2 style="color: yellow" >yellow Color</h2>
+    } @default {
+        <h2>No color match</h2>
+    }
+}
 <p>switchcase works!</p>
