@@ -1,0 +1,15 @@
+<h1>For Loop for Angular</h1>
+
+@for (user of users; track $index) {
+    <h2>{{user}} </h2>
+}
+<hr>
+@for (student of students; track student.name; let id=$index) {
+   <div>
+    <span>{{id + 1}} </span>
+    <span>{{student.name}} </span>
+    <span>{{student.age}} </span>
+    <span>{{student.marital}} </span>
+   </div>
+}
+<p>forloop works!</p>
