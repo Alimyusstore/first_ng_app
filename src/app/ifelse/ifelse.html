@@ -3,6 +3,7 @@
 <button (click)="hide()" >Hide</button>
 <button (click)="show()" >Show</button>
 <button (click)="toggle()" >Toggle</button>
+<button (click)="toggle()" >{{display? "show": "hide"}}</button>
 
 @if(display){
   <div style="width: 200px; height: 200px; background-color: green;"></div>
