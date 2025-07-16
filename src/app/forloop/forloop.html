@@ -1,9 +1,11 @@
 <h1>For Loop for Angular</h1>
 
-@for (user of users; track $index) {
+@for (user of users; track user) {
     <h2>{{user}} </h2>
 }
 <hr>
+
+<h1>For Loop Contectual Variable for Angular</h1>
 @for (student of students; track student.name; let id=$index) {
    <div>
     <span>{{id + 1}} </span>
@@ -11,5 +13,24 @@
     <span>{{student.age}} </span>
     <span>{{student.marital}} </span>
    </div>
+}
+<hr><hr>
+@for (user of users; track $index) {
+    @if($first || $last){
+        <h2 style="color:red;">{{user}} </h2>
+    }@else{
+        <h2 >{{user}} </h2>
+    }
+}
+<hr><hr>
+@for (user of users; track $index) {
+    @if($even){
+        <h2 style="color:green; background-color:yellow">{{user}} </h2>
+    }
+    @if ($odd){
+        <h2 style="color:blue; background-color:wheat">{{user}} </h2>
+    }
+}@empty(){
+    <h4>No result found</h4>
 }
 <p>forloop works!</p>

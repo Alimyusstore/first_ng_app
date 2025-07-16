@@ -7,10 +7,12 @@ import { Get } from '../get/get';
 import { Ifelse } from '../ifelse/ifelse';
 import { Switchcase } from '../switchcase/switchcase';
 import { Forloop } from '../forloop/forloop';
+import { Signals } from '../signal/signal';
+import { Effect } from '../effect/effect';
 
 @Component({
   selector: 'component',
-  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop],
+  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop, Signals, Effect],
   templateUrl: './component.html',
   styleUrl: './component.css'
 })

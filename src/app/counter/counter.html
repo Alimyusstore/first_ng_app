@@ -7,6 +7,12 @@
         <button class="btn bg-black" (click)="handleCounter('reset')">Reset</button>
         <button class="btn bg-green" (click)="handleCounter('plus')">Increment</button>
     </div>
+    <h3 class="count">{{count()}}</h3>
+    <div>
+        <button class="btn bg-red" (click)="updateCounter('dec')">Decrement</button>
+        <button class="btn bg-black" (click)="updateCounter('res')">Reset</button>
+        <button class="btn bg-green" (click)="updateCounter('inc')">Increment</button>
+    </div>
 </div>
 
 <p>counter works!</p>
