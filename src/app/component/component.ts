@@ -9,10 +9,12 @@ import { Switchcase } from '../switchcase/switchcase';
 import { Forloop } from '../forloop/forloop';
 import { Signals } from '../signal/signal';
 import { Effect } from '../effect/effect';
+import { TwoWayBinding } from '../two-way-binding/two-way-binding';
+import { ToDo } from '../to-do/to-do';
 
 @Component({
   selector: 'component',
-  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop, Signals, Effect],
+  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop, Signals, Effect,TwoWayBinding, ToDo ],
   templateUrl: './component.html',
   styleUrl: './component.css'
 })
