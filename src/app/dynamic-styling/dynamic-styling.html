@@ -1,0 +1,7 @@
+<h1>Dynamic Styling </h1>
+<h2 [style.color]="color">This is a blue text</h2>
+<h2 [style.backgroundColor]="color1">This is a yellow background</h2>
+<p [style.fontSize]="fontSizeSmall">Increase Font Size</p>
+<p [style.fontSize]="zoom ? fontSizeBig: fontSizeSmall">change of Font Size</p>
+<button (click)="handleToggle() ">Zoom Togge</button>
+<p>dynamic-styling works!</p>
