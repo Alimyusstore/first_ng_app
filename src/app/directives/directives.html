@@ -1,1 +1,53 @@
+<h1>This is Directive </h1>
+<h2>Ngif Directive</h2>
+<h3 *ngIf="show">Show Directive</h3>
+<h4 *ngIf="show">Toggle me</h4>
+<button (click)="toggle()">Toggle</button>
+<br>
+<p *ngIf="block==1">Paragraph 1</p>
+<p *ngIf="block==2">Paragraph 2</p>
+<p *ngIf="block==3">Paragraph 3</p>
+<p *ngIf="block==4">Paragraph 4</p>
+<button (click)="handleBlock()">Toggle</button>
+<br>
+
+<button (click)="toggleLog()" *ngIf="log;else elseBlock " >Logout</button>
+<ng-template #elseBlock>
+<button (click)="toggleLog()">Login</button>
+</ng-template>
+<button (click)="toggleLog()" *ngIf="!log" >Logout</button>
+<button (click)="toggleLog()" *ngIf="log">Login</button>
+<hr><hr>
+
+
+<h2>Ngfor Directive</h2>
+<ul>
+    <li *ngFor="let student of students">
+            {{student}}
+    </li>
+</ul>
+<hr>
+<ul>
+    <li *ngFor="let worker of workers">
+        {{worker.name}}, {{worker.age}},  {{worker.work}}
+    </li>
+</ul>
+
+
+<hr> <hr>
+<h2>ngSwitch Directive</h2>
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="background-color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h1>
+    <h1 *ngSwitchCase="'pink'" style="background-color: pink;">Pink Color</h1>
+    <h1 *ngSwitchCase="'yellow'" style="background-color: yellow;">Yellow Color</h1>
+    <h1 *ngSwitchDefault >No Color Found</h1>
+<button (click)="changeColor('red')">Red Color</button>
+<button (click)="changeColor('blue')">Blue Color</button>
+<button (click)="changeColor('green')">Green Color</button>
+<button (click)="changeColor('pink')">Pink Color</button>
+<button (click)="changeColor('yellow')">Yellow Color</button>
+</div>
+
 <p>directives works!</p>
