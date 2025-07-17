@@ -1,2 +1,9 @@
 <h1>Home Page</h1>
+<h2>User List</h2>
+<ul>
+    @for (user of users; track user.id) {
+        <li routerLink="user/{{user.id}}/{{user.name}}">{{user.name}} </li>
+    }
+</ul>
+<router-outlet/>
 <p>home works!</p>
