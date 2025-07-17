@@ -1,0 +1,14 @@
+nav {
+   display: flex; 
+   justify-content: space-between;
+   margin: 5px 10px;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+.active{
+    background-color: brown;
+    color: aliceblue;
+}

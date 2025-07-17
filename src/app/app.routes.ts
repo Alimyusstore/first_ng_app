@@ -8,8 +8,10 @@ import { ToDo } from './to-do/to-do';
 import { Ifelse } from './ifelse/ifelse';
 import { Switchcase } from './switchcase/switchcase';
 import { Components } from './component/component';
+import { Home } from './home/home';
 
 export const routes: Routes = [
+    {path: '', component: Home},
     {path: 'login', component: Login},
     {path: 'about', component: About},
     {path: 'signup', component: Signup},
