@@ -11,6 +11,7 @@ import { Components } from './component/component';
 import { Home } from './home/home';
 import { Page404 } from './page404/page404';
 import { User } from './user/user';
+import { Profile } from './profile/profile';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -23,6 +24,8 @@ export const routes: Routes = [
     {path: 'switchcase', component: Switchcase},
     {path: 'contact', component: Contact},
     {path: 'component', component: Components},
+    {path: 'profile', component: Profile},
+    {path: 'profile', component: Profile, data: {age: '28'} },
     {path: 'user/:id/:name', component: User},
 
     {path: '**', component: Page404},

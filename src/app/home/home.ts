@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -36,4 +36,10 @@ export class Home {
   },
 
  ]
+
+ constructor(private route:Router){}
+
+ goToProfile(){
+this.route.navigate(['profile'], {queryParams:{country:"Nigeria"}})
+ }
 }

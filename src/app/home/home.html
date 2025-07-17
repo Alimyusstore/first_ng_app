@@ -5,5 +5,8 @@
         <li routerLink="user/{{user.id}}/{{user.name}}">{{user.name}} </li>
     }
 </ul>
+<hr>
+<button (click)="goToProfile()">Go to Profile Page</button>
+<a routerLink="profile">Go To Profile</a>
 <router-outlet/>
 <p>home works!</p>
