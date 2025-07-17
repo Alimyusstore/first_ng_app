@@ -9,6 +9,7 @@ import { Ifelse } from './ifelse/ifelse';
 import { Switchcase } from './switchcase/switchcase';
 import { Components } from './component/component';
 import { Home } from './home/home';
+import { Page404 } from './page404/page404';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -21,4 +22,5 @@ export const routes: Routes = [
     {path: 'switchcase', component: Switchcase},
     {path: 'contact', component: Contact},
     {path: 'component', component: Components},
+    {path: '**', component: Page404},
 ];
