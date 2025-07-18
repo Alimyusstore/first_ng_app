@@ -13,10 +13,11 @@ import { TwoWayBinding } from '../two-way-binding/two-way-binding';
 import { ToDo } from '../to-do/to-do';
 import { DynamicStyling } from '../dynamic-styling/dynamic-styling';
 import { Directives } from '../directives/directives';
+import { Forms } from '../forms/forms';
 
 @Component({
   selector: 'component',
-  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop, Signals, Effect,TwoWayBinding, ToDo , DynamicStyling, Directives],
+  imports: [Login, Signup, Button, Counter, Get, Ifelse, Switchcase, Forloop, Signals, Effect,TwoWayBinding, ToDo , DynamicStyling, Directives, Forms],
   templateUrl: './component.html',
   styleUrl: './component.css'
 })

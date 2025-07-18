@@ -1,0 +1,35 @@
+<h1>Basic of React Forms</h1>
+<!-- <input type="text" placeholder="Enter name ..." [formControl]="name">
+<input type="text" placeholder="Enter password ..." [formControl]="password">
+<input type="text" placeholder="Enter email ..." [formControl]="email"> -->
+<!-- <button (click)="getValue()">Get Info</button>
+<button (click)="setValue()">Set Info</button>
+
+<h4>{{name.value}} </h4>
+<h4>{{password.value}} </h4>
+<h4>{{email.value}} </h4> -->
+
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="submitData()">
+    <input type="text" placeholder="Enter name" formControlName="name">
+    <span *ngIf="name?.hasError('required')">required</span>
+    <span class="error" *ngIf="name?.invalid &&(name?.dirty || name?.touched)">Valid Name Please</span>
+    <br><br>
+    <input type="text" placeholder="Enter password" formControlName="password">
+    <span *ngIf="password?.hasError('required')">required</span>
+    <span class="error" *ngIf="password?.invalid &&(name?.dirty || name?.touched)">Valid Password Please</span>
+
+    <br><br>
+    <input type="text" placeholder="Enter email" formControlName="email"> 
+    <span *ngIf="email?.hasError('required')">required</span>
+    <span class="error" *ngIf="email?.invalid &&(name?.dirty || name?.touched)">Valid Email Please</span>
+
+    <br><br>
+    <button>Submit</button>
+    <button  type="button" (click)="setValues()">Set Value</button>
+</form>
+
+<h4>{{this.profileForm.value.name}} </h4>
+<h4>{{this.profileForm.value.password}} </h4>
+<h4>{{this.profileForm.value.email}} </h4>
+<p>forms works!</p>
