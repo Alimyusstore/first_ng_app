@@ -1,10 +1,10 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'forms',
-  imports: [ReactiveFormsModule,NgIf],
+  imports: [ReactiveFormsModule, NgIf, FormsModule],
   templateUrl: './forms.html',
   styleUrl: './forms.css',
 })
@@ -52,5 +52,7 @@ export class Forms {
     return this.profileForm.get('name')
   }
 
-  
+  addUser(value: string){
+
+  };
 }
