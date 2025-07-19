@@ -22,5 +22,9 @@ import { Forms } from '../forms/forms';
   styleUrl: './component.css'
 })
 export class Components {
-
+ userName = 'Tajudeen Osude' ;
+users = ['Alim', 'Ajibola', 'Osude', 'tajudeen']
+ changeLog(val: string){
+this.userName = val
+ }
 }

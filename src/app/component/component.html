@@ -7,9 +7,18 @@
 <hr>
 <gets></gets>
 <hr>
-<login></login>
+<login [user]="userName"></login>
+
+<select name="" #selectedlogs (change)="changeLog(selectedlogs.value)">
+    <option value="Alim Ajibola">Alim Ajibola</option>
+    <option value="Ajibola Yusuf">Ajibola Yusuf</option>
+    <option value="Yusuf Tajudeen">Yusuf Tajudeen</option>
+</select>
 <hr>
-<signup></signup>
+@for (user of users; track user) {
+    <signup [user]="user">{{user}} </signup>
+
+}
 <hr>
 <buttons></buttons>
 <hr>
@@ -19,7 +28,7 @@
 <hr>
 <signal></signal>
 <hr>
-<effect></effect>
+<effect ></effect>
 <hr>
 <two-way-binding></two-way-binding>
 <hr>
