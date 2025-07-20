@@ -1,4 +1,8 @@
 <p>component works!</p>
+<p>Today's Date is {{today | date}} </p>
+<p>Today's Date is {{today | date: 'fullDate'}} </p>
+<p>Today's Date is {{today | date: 'hh:mm:ss'}} </p>
+<p>The price is {{amount | currency: 'EUR'}} </p>
 <counters></counters>
 <hr>
 <to-dos></to-dos>
@@ -16,11 +20,14 @@
 </select>
 <hr>
 @for (user of users; track user) {
-    <signup [user]="user">{{user}} </signup>
+    <signup [user]="user">{{user | titlecase}} </signup>
 
 }
 <hr>
-<buttons></buttons>
+<buttons  (getUsers)="handleUsers($event)"></buttons>
+@for (user of userNs; track user) {
+    <h4>{{user | uppercase}} </h4>
+}
 <hr>
 <switchcase></switchcase>
 <hr>

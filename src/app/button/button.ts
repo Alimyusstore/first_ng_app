@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'buttons',
   imports: [],
   templateUrl: './button.html',
-  styleUrl: './button.css'
+  styleUrl: './button.css',
 })
 export class Button {
-  handleClick(){
-    console.log("clicked");
+  @Output() getUsers = new EventEmitter();
+  userNs = ['Alim', 'Ajibola', 'Osude', 'tajudeen'];
+  passUsers(){
+    this.getUsers.emit(this.userNs);
+  }
+  handleClick() {
+    console.log('clicked');
     this.otherCalls();
-   }
-   otherCalls(){
-    console.log(" other Clicks");
-    
-   }
+  }
+  otherCalls() {
+    console.log(' other Clicks');
+  }
 }

@@ -1,6 +1,24 @@
 <headers></headers>
 <h1>My name is {{name()}} </h1>
 <h2>This is {{title()}} </h2>
+<h3>Services Rendered</h3>
+<!-- <button (click)="getData()">Show Product</button> -->
+@for (product of productData; track product) {
+    <h4>{{product.name}}, {{product.category}} , {{product.price}}</h4>
+}
+<h3>API call Services</h3>
+<div>
+    @for (product of productDatas; track product.id) {
+        <ul>
+            <li><b>Name:</b> {{product.title}} </li>
+            <li><b>Price:</b> {{product.price}} </li>
+            <li><b>Rating:</b> {{product.rating}} </li>
+      <li>
+        <img src={{product.thumbnail}} alt="" />
+      </li>
+        </ul>
+    }
+</div>
 <router-outlet></router-outlet>
 <!-- <component></component> -->
 
