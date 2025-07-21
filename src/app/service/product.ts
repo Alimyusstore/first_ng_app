@@ -21,4 +21,8 @@ productList(){
   const url = 'https://dummyjson.com/products';
   return this.http.get(url)
 }
+getProduct(){
+  const url = 'http://localhost:3000/';
+  return  this.http.get(url)
+}
 }

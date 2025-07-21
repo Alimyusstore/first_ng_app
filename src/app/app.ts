@@ -22,14 +22,22 @@ export class App {
       }[]
     | undefined;
   productDatas : any;
-  constructor(private product: Product) {}
+  products : any;
+  // constructor(private product: Product) {}
   // getData() {
   //   this.productData = this.product.getProductData();
   // }
-  ngOnInit() {
- this.product.productList().subscribe((data: any) => {
-    console.log(data);
-    this.productDatas = data.products;
-  });
-  }
+//   ngOnInit() {
+//  this.product.productList().subscribe((data: any) => {
+//     console.log(data);
+//     this.productDatas = data.products;
+//   });
+//   }
+
+constructor(private product: Product){}
+ngOnInit(){
+  this.product.getProduct().subscribe((data: any)=>{
+    this.products = data
+  })
+}
 }
