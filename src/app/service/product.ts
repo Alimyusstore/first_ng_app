@@ -4,35 +4,37 @@ import { Products } from '../interfaces/Product';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class Product {
-// constructor(){
-//   console.log('Services');
-// }
-// getProductData(){
-//   return [
-//     { name: 'Iphone', category: 'Mobile', price: 120000 },
-//     { name: 'Samsung', category: 'Mobile', price: 120000 },
-//     { name: 'Dell', category: 'Laptop', price: 120000 },
-//   ];
-// }
-productDatas:any 
-constructor(private http : HttpClient){}
-// productList(){
-//   const url = 'https://dummyjson.com/products';
-//   return this.http.get(url)
-// }
-getProduct(): Observable<Products[]>{
-  const url = 'http://localhost:3000/products';
-  return  this.http.get<Products[]>(url);
-}
-saveProduct(product: Products): Observable<Products>{
-  const url = 'http://localhost:3000/products';
-  return  this.http.post<Products>(url, product); 
-}
-deleteProduct(){
-
-}
-updateProduct(){}
+  // constructor(){
+  //   console.log('Services');
+  // }
+  // getProductData(){
+  //   return [
+  //     { name: 'Iphone', category: 'Mobile', price: 120000 },
+  //     { name: 'Samsung', category: 'Mobile', price: 120000 },
+  //     { name: 'Dell', category: 'Laptop', price: 120000 },
+  //   ];
+  // }
+  productDatas: any;
+  constructor(private http: HttpClient) {}
+  // productList(){
+  //   const url = 'https://dummyjson.com/products';
+  //   return this.http.get(url)
+  // }
+  getProduct(): Observable<Products[]> {
+    const url = 'http://localhost:3000/products';
+    return this.http.get<Products[]>(url);
+  }
+  saveProduct(product: Products): Observable<Products> {
+    const url = 'http://localhost:3000/products';
+    return this.http.post<Products>(url, product);
+  }
+  deleteProduct(id: number): Observable<Products> {
+    return this.http.delete<Products>(this.url+'/'+id);
+  }
+  updateProduct(id: number): Observable<Products> {
+    return this.http.get<Products>(this.url+'/'+id);
+  }
 }

@@ -22,36 +22,55 @@ export class App {
         price: number;
       }[]
     | undefined;
-  productDatas : any;
-  products : Products[] = [];
+  productDatas: any;
+  products: Products[] = [];
+  selectProduct: Products | undefined = [];
   // constructor(private product: Product) {}
   // getData() {
   //   this.productData = this.product.getProductData();
   // }
-//   ngOnInit() {
-//  this.product.productList().subscribe((data: any) => {
-//     console.log(data);
-//     this.productDatas = data.products;
-//   });
-//   }
+  //   ngOnInit() {
+  //  this.product.productList().subscribe((data: any) => {
+  //     console.log(data);
+  //     this.productDatas = data.products;
+  //   });
+  //   }
 
-constructor(private productInfo: Product){}
-ngOnInit(){
-  this.getProduct();
-}
+  constructor(private productInfo: Product) {}
+  ngOnInit() {
+    this.getProduct();
+  }
 
-getProduct(){
-  this.productInfo.getProduct().subscribe((data: Products[]) => {
-    this.products = data;
-  });
-}
-addProduct(product: Products){
-  this.productInfo.saveProduct(product).subscribe((data: Products) => {
-    console.log(data);
+  getProduct() {
+    this.productInfo.getProduct().subscribe((data: Products[]) => {
+      this.products = data;
+    });
+  }
+  addProduct(product: Products) {
+    this.productInfo.saveProduct(product).subscribe((data: Products) => {
+      console.log(data);
 
-    if (data) {
-      this.getProduct();
-    }
-  });
-}
+      if (data) {
+        this.getProduct();
+      }
+    });
+  }
+  deleteProduct(id: number) {
+    this.productInfo.deleteProduct(id).subscribe((data: Products) => {
+      console.log(data);
+
+      if (data) {
+        this.getProduct();
+      }
+    });
+  }
+  updateProduct(id: number) {
+    this.productInfo.updateProduct(id).subscribe((data: Products) => {
+      console.log(data);
+      this.selectProduct = data
+      if (data) {
+        this.getProduct();
+      }
+    });
+  }
 }
