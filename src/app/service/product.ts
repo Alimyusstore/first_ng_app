@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Products } from '../interfaces/Product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +19,20 @@ export class Product {
 // }
 productDatas:any 
 constructor(private http : HttpClient){}
-productList(){
-  const url = 'https://dummyjson.com/products';
-  return this.http.get(url)
+// productList(){
+//   const url = 'https://dummyjson.com/products';
+//   return this.http.get(url)
+// }
+getProduct(): Observable<Products[]>{
+  const url = 'http://localhost:3000/products';
+  return  this.http.get<Products[]>(url);
 }
-getProduct(){
-  const url = 'http://localhost:3000/';
-  return  this.http.get(url)
+saveProduct(product: Products): Observable<Products>{
+  const url = 'http://localhost:3000/products';
+  return  this.http.post<Products>(url, product); 
 }
+deleteProduct(){
+
+}
+updateProduct(){}
 }

@@ -19,6 +19,26 @@
         </ul>
     }
 </div>
+
+<form action="" #formData="ngForm" (ngSubmit)="addProduct(formData.value)">
+    <input type="text" placeholder="enter title" name="title" ngModel><br>
+    <input type="text" placeholder="enter category" name="category" ngModel><br>
+    <input type="text" placeholder="enter description" name="description" ngModel><br>
+    <input type="text" placeholder="enter price" name="price" ngModel> <br>
+    <button >Add product</button>
+</form>
+<div>
+    @for (product of products; track product.id) {
+        <ul>
+            <li>{{product.title}} </li>
+            <li>{{product.category}} </li>
+            <li>{{product.description}} </li>
+            <li>{{product.price}} </li>
+        </ul>
+    }
+</div>
+
+
 <router-outlet></router-outlet>
 <!-- <component></component> -->
 

@@ -3,11 +3,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { Components } from './component/component';
 import { Product } from './service/product';
-
+import { Products } from './interfaces/Product';
+import {FormsModule} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Components, RouterLink, Header],
+  imports: [RouterOutlet, Components, RouterLink, Header, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -22,7 +23,7 @@ export class App {
       }[]
     | undefined;
   productDatas : any;
-  products : any;
+  products : Products[] = [];
   // constructor(private product: Product) {}
   // getData() {
   //   this.productData = this.product.getProductData();
@@ -34,10 +35,23 @@ export class App {
 //   });
 //   }
 
-constructor(private product: Product){}
+constructor(private productInfo: Product){}
 ngOnInit(){
-  this.product.getProduct().subscribe((data: any)=>{
-    this.products = data
-  })
+  this.getProduct();
+}
+
+getProduct(){
+  this.productInfo.getProduct().subscribe((data: Products[]) => {
+    this.products = data;
+  });
+}
+addProduct(product: Products){
+  this.productInfo.saveProduct(product).subscribe((data: Products) => {
+    console.log(data);
+
+    if (data) {
+      this.getProduct();
+    }
+  });
 }
 }
